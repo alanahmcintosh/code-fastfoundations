@@ -157,15 +157,21 @@ def control_flags():
     result = re.search(regex, string, re.DOTALL | re.MULTILINE)
     print(f"{regex:<30}: {result.group()}")
 
+def find_six():
+    print(string)
+    regex = r"\w{6}"
+    result = re.search(regex, string)
+    print(f"{regex:<30}: {result.group()}")
 
 def main():
-    get_match_object()
-    character_classes()
-    positional_anchors()
-    quantifiers()
-    custom_classes_and_escaping_sequences()
-    grouping_and_capturing_regexes()
-    control_flags()
+    #get_match_object()
+    #character_classes()
+    #positional_anchors()
+    #quantifiers()
+    #custom_classes_and_escaping_sequences()
+    #grouping_and_capturing_regexes()
+    #control_flags()
+    find_six()
     return 0
 
 

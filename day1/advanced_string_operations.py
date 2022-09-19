@@ -187,7 +187,7 @@ def main():
     # slicing_and_dicing_strings(input())
     # string_method_formatting(input())
     # string_format_minilanguage()
-    calculate_distance()
+    # calculate_distance()
     return 0
 
 
