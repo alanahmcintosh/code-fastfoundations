@@ -27,12 +27,21 @@ def using_filter():
     print(f"{filter(lambda w: len(w) > 7, words) = }")
 
 
+
+def dict_squared(a_dict):
+    output_dict = dict()
+    for key, value in a_dict.items:
+        print (f"{key} -> {value ** 2}")
+        return
 def main():
-    using_map()
-    using_map_and_lambda()
-    using_filter()
+ #   using_map()
+   # using_map_and_lambda()
+    # using_filter()
+    my_dict = {'nine':9, 'ten':10, 'eleven':11}
+    dict_squared(my_dict)
     return 0
 
 
 if __name__ == '__main__':
     sys.exit(main())
+

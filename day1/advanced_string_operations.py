@@ -12,6 +12,13 @@ def print_5s():
     print(f"{len(sssss_bytes) = }")
     print(f"{sssss_bytes = }")
 
+def print_translate():
+    sssss = "مرحبًا,Hello"
+    print(sssss)
+    print(f"{len(sssss) = }")
+    sssss_bytes = sssss.encode('utf-8')
+    print(f"{len(sssss_bytes) = }")
+    print(f"{sssss_bytes = }")
 
 def working_with_bytes():
     b_empty = bytes()
@@ -161,14 +168,16 @@ def string_format_minilanguage():
 
 def main():
     # print_5s()
+    # print_translate()
     # working_with_bytes()
     # print_triple_quoted()
     # string_search('who')
     # string_is_properties(input())
-    # slicing_and_dicing_strings(input())
+    slicing_and_dicing_strings(input())
     # string_method_formatting(input())
     # string_format_minilanguage()
     return 0
+
 
 
 if __name__ == '__main__':

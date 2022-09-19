@@ -14,7 +14,12 @@ def main():
     except ValueError:
         print(f"Invalid value for a; defaulting to a=1...", file=sys.stderr)
         a = 1
-    r = float(input("r: "))
+    r = str(input("r: "))
+    try:
+        assert isinstance(r, float)
+    except AssertionError:
+        raise ValueError("invalid input for r")
+        return 1
     n = int(input("n: "))
     try:
         assert n >= 1
