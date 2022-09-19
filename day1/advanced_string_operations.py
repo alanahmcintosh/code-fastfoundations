@@ -1,3 +1,4 @@
+import math
 import random
 import shutil
 import sys
@@ -165,6 +166,16 @@ def string_format_minilanguage():
 {signature:<{width}}
 """)
 
+def calculate_distance():
+    string = "violet_blue|convert|red|6.3327|9.4423|113.3428|7.3298|5.3353|9.9283|over|all"
+    print(f"{string = }")
+    split_string = string.split('|')
+    print(f"{split_string = }")
+    float_values = list(map(float, split_string[3:9]))
+    print(float_values)
+    x1, y1, z1, x2, y2, z2 = float_values
+    distance = math.sqrt((x2 - x1) **2 + ( y2 - y1 )**2 + (z2 - z1)**2)
+    print(f"{distance = }")
 
 def main():
     # print_5s()
@@ -173,9 +184,10 @@ def main():
     # print_triple_quoted()
     # string_search('who')
     # string_is_properties(input())
-    slicing_and_dicing_strings(input())
+    # slicing_and_dicing_strings(input())
     # string_method_formatting(input())
     # string_format_minilanguage()
+    calculate_distance()
     return 0
 
 
