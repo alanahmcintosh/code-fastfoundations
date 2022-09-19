@@ -159,7 +159,7 @@ def control_flags():
 
 def find_six():
     print(string)
-    regex = r"\w{6}"
+    regex = r"\w+(@)\w+(.)\w+"
     result = re.search(regex, string)
     print(f"{regex:<30}: {result.group()}")
 
