@@ -77,10 +77,10 @@ def testing_paths():
 
 def useful_path_operations():
     import pathlib
-    my_path = pathlib.Path("/Users/paulkorir/PycharmProjects/code-fastfoundations/day2/dir1/dir3/dir4/einstein.txt")
+    my_path = pathlib.Path("/Users/alanah/PycharmProjects/code-fastfoundations/day2/dir1/dir3/dir4/einstein.txt")
     with my_path.open() as f:
         print(f.read())
-    my_path = pathlib.Path("~/PycharmProjects/code-fastfoundations/day2/dir1/dir3/dir4/einstein.txt")  # ~ = user dir
+    my_path = pathlib.Path("~/day2/dir1/dir3/dir4/einstein.txt")  # ~ = user dir
     # with my_path.open() as f: # raises an exception
     #     print(f.read())
     with my_path.expanduser().open() as f:  # need to expand user first
@@ -97,6 +97,20 @@ def useful_path_operations():
     for path_object in my_path.rglob('**/*'):  # recursive globbing
         print(f"\t* {path_object.name:<30} ==> {path_object.parent}")
 
+def iterating_over_file_contents():
+    with open("think_different.txt") as f:
+        for row in f:
+            print(row.strip())
+
+def read_UTF32():
+    with open ("wagata.txt", encoding ='utf - 32') as f:
+        print(f.read())
+
+def read_file(filename, lines=10):
+    with open (filename) as f:
+        lines_read = f.readlines()[:lines]
+        print(lines_read)
+        print(len(lines_read))
 
 def main():
     # opening_and_closing_files()
@@ -105,7 +119,9 @@ def main():
     # navigating_files()
     # working_with_paths()
     # testing_paths()
-    useful_path_operations()
+    # useful_path_operations()
+    # read_UTF32()
+    # read_file("paradoxical.txt")
     return 0
 
 

@@ -52,11 +52,25 @@ def parsing_text_files():
             cols = row.strip().split("\t")
             print(cols)
 
+def add_newlines():
+    lines_of_text = [
+        "Knowledge is power.",
+        "Power to do evil... or power to do good.",
+        "Power itself is not evil.",
+        "So knowledge itself is not evil.",
+        "― Veronica Roth, Allegiant",
+    ]
+    with open("power_quote.txt", 'w') as f:
+        f.writelines(lines_of_text)
+    with open("power_quote.txt") as f:
+        print(f.readlines())
+
 
 def main():
     # writing_to_text_files()
     # creating_and_modifying_paths()
     # parsing_text_files()
+    add_newlines()
     return 0
 
 
