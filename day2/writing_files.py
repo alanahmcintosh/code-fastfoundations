@@ -1,4 +1,8 @@
+import math
+import random
+import shutil
 import sys
+import textwrap
 
 
 def writing_to_text_files():
@@ -52,6 +56,7 @@ def parsing_text_files():
             cols = row.strip().split("\t")
             print(cols)
 
+
 def add_newlines():
     lines_of_text = [
         "Knowledge is power.",
@@ -61,16 +66,25 @@ def add_newlines():
         "― Veronica Roth, Allegiant",
     ]
     with open("power_quote.txt", 'w') as f:
-        f.writelines(lines_of_text)
+        f.writelines(map(lambda s: s + '\n', lines_of_text))
     with open("power_quote.txt") as f:
         print(f.readlines())
 
+
+def printing_exons():
+    with open("Homo_sapiens.GRCh38.107.abinitio.gtf") as f:
+        for row in f:
+            if row[0] != '#':
+                print(row)
 
 def main():
     # writing_to_text_files()
     # creating_and_modifying_paths()
     # parsing_text_files()
-    add_newlines()
+    # add_newlines()
+    # creating_random_file()
+    # parsing_text_files_exc()
+    printing_exons()
     return 0
 
 
