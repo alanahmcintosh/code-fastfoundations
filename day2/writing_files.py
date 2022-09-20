@@ -1,5 +1,6 @@
 import math
 import random
+import re
 import shutil
 import sys
 import textwrap
@@ -73,12 +74,19 @@ def add_newlines():
 
 def printing_exons():
     with open("Homo_sapiens.GRCh38.107.abinitio.gtf") as f:
+        word = "exon"
         for row in f:
-            if row[0] != '#':
+            if row[0] != '#' and word in row:
                 print(row)
 
+
+
+
+
+
+
+
 def main():
-    # writing_to_text_files()
     # creating_and_modifying_paths()
     # parsing_text_files()
     # add_newlines()

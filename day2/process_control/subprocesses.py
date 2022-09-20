@@ -57,7 +57,7 @@ def stop_subprocess():
 
 
 def main():
-    simplest_way()
+    # simplest_way()
     # create_subprocess()
     # stop_subprocess()
     return 0
