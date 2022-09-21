@@ -4,10 +4,10 @@ import pysam
 
 
 def pysam_read_sam_file():
-    samfile = pysam.AlignmentFile("genomics_workout/SRR20334685/SRR20334685.sam", "r")
+    samfile = pysam.AlignmentFile("/home/alanah/SRR20334685.sam", "r")
     count = 0
     for read in samfile:
-        if count > 10:
+        if count > 10: #only count first ten, for each read in sam file (prints one at a time) show me this read, read is an object of type alignsegement
             break
         print(f"{read = }")  # https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment
         count += 1
@@ -18,17 +18,18 @@ def pysam_read_sam_file():
 
 
 def pysam_read_bam_file():
-    with pysam.AlignmentFile("genomics_workout/SRR20334685/SRR20334685.final.bam") as bamfile:
+    with pysam.AlignmentFile("/home/alanah/SRR20334685.final.bam") as bamfile:
         # fetch by region
-        for read in bamfile.fetch("I", 1000, 2000):
+        for read in bamfile.fetch("I", 1000, 2000):    ##looking for a specfic region (genomic coordinates)
             print(f"{read = }")  # https://pysam.readthedocs.io/en/latest/api.html#pysam.AlignedSegment
             print(f"{read.get_forward_sequence() = }")
+            print(f"{len(read.get_forward_sequence())}")
             print(f"{read.get_forward_qualities() = }")
             print(f"{read.get_reference_positions() = }")
 
 
 def pysam_get_pileup():
-    with pysam.AlignmentFile("genomics_workout/SRR20334685/SRR20334685.final.bam") as bamfile:
+    with pysam.AlignmentFile("/home/alanah/SRR20334685.final.bam") as bamfile:
         # reads associated with positions
         for pileup_column in bamfile.pileup("I", 1750, 1751):
             # print(f"{pileup_column = }") # https://pysam.readthedocs.io/en/latest/api.html#pysam.PileupColumn
@@ -49,8 +50,8 @@ def htseq_read_fastq():
 def main():
     # pysam_read_sam_file()
     # pysam_read_bam_file()
-    # pysam_get_pileup()
-    htseq_read_fastq()
+    pysam_get_pileup()
+    #htseq_read_fastq()
     return 0
 
 
