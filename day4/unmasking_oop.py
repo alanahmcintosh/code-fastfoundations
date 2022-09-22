@@ -73,7 +73,7 @@ def main():
     #print(arc_length(small_circle, 75))
     #print(bounding_box(small_circle))
     #print(small_circle.area_of_circle())
-    print(small_circle.perimeter_of_circle())
+    #print(small_circle.perimeter_of_circle())
     print(small_circle.bounding_box())
     print(small_circle.arc_length(50))
 
