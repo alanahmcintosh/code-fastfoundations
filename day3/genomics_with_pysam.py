@@ -42,16 +42,16 @@ def pysam_get_pileup():
 def htseq_read_fastq():
     import HTSeq
     import itertools
-    with HTSeq.FastqReader("genomics_workout/SRR20334685/SRR20334685.fastq") as fastq_file:
+    with HTSeq.FastqReader("/home/alanah/SRR20334685.fastq") as fastq_file:
         for read in itertools.islice(fastq_file, 10):
             print(f"{read = }") # https://htseq.readthedocs.io/en/master/refoverview.html
-
+            print(f"{read.qual = }")
 
 def main():
     # pysam_read_sam_file()
     # pysam_read_bam_file()
-    pysam_get_pileup()
-    #htseq_read_fastq()
+    # pysam_get_pileup()
+    htseq_read_fastq()
     return 0
 
 

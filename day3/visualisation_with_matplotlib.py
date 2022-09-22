@@ -117,7 +117,7 @@ def plot_axes():
 
 
 def main():
-    # plot_lines()
+    plot_lines()
     # plot_scatter()
     # plot_barchart()
     # plot_histogram()
@@ -125,7 +125,7 @@ def main():
     # plot_multiplots_and_export()
     # plot_legend()
     # plot_titles_and_text()
-    plot_axes()
+    # plot_axes()
     return 0
 
 
