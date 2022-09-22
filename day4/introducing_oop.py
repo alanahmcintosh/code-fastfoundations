@@ -3,12 +3,13 @@ import math
 import os
 
 class Rectangle:
-    def __init__(self, width, height, position=(0, 0), fill=("Red"), stroke="Black"):
+    def __init__(self, width, height, position=(0, 0), fill="Red", stroke="Black", angle=(0.0)):
         self.width = width
         self.height = height
         self.position = position
         self.fill = fill
         self.stroke = stroke
+        self.angle = angle
 
     def __str__(self):  # Python special methods
         return f"I am a rectangle of length {self.width} and height {self.height}. I have area {self.area()}. I have diagonal {self.diagonal()}. My coordinates are {self.bounding_box()}. My perimeter equals {self.perimeter()}."
@@ -76,6 +77,9 @@ class Canvas:
         self.position = position
         self.fill = fill
 
+    def __str__(self):
+        return f"length = {self.length}, height = {self.height}"
+
 class Text:
 
     def __init__(self, text, colour=("Black"), position=(3,3)):
@@ -87,19 +91,36 @@ class Text:
         return f"My signature is {self.text}"
 
 
+class Square(Rectangle):
+    def __init__(self, width, *args, **kwargs):
+        super().__init__(width, width, *args, **kwargs)
 
+    def __str__(self):  # Python special methods
+        return f"I am a square of length {self.width}. I have area {self.area()}. I have diagonal {self.diagonal()}. My coordinates are {self.bounding_box()}. My perimeter equals {self.perimeter()}."
 
-
+# class
 
 def main():
     rectangle = Rectangle(10, 15)
+    signature = Text("Alanah")
+    canvas = Canvas(10,15)
+    square = Square(10)
 
+
+    print(square.angle)
     print(rectangle)
+    print(signature)
+    print(canvas)
     #print(rectangle.position)
     #print(rectangle.bounding_box())
     #print(rectangle.area())
     #print(rectangle.diagonal())
     #print(rectangle.perimeter())
+    #print(square.position)
+    #print(square.bounding_box())
+    #print(square.area())
+    #print(square.diagonal())
+    #print(square.perimeter())
 
     return os.EX_OK
 
